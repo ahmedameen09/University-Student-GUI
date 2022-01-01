@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 from tkinter import messagebox
 from PIL import ImageTk , Image
-from main import checklogin
+from Sql-Connector import *
 
 
 # Functions
