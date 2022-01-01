@@ -10,7 +10,8 @@ this system is GUI Student system designed for universty Students to make them a
 - React and Share on the Universty Social Platform
 
 
-this system requires to build its MySQL Database which exist in this respirotry : https://github.com/ahmedameen09/University-Database
+this system requires to build its MySQL Database which exist in this respirotry : https://github.com/ahmedameen09/University-Database.
+
 After Build the Database You need only to run the Student-Main.py which has Sql-Connector.py as his module to connect with Database.
 
 
