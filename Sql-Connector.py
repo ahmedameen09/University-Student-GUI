@@ -3,30 +3,34 @@ from tkinter import messagebox
 
 
 def checklogin(email,password):
-    mydb = mysql.connector.connect(host="localhost", user="admin", passwd="123456", database="accounts")
-    mycursor = mydb.cursor()
-    mycursor.execute("SELECT Email,Password FROM accounts.students WHERE Email= '%s'" %email)
-    result = mycursor.fetchone()
     try :
+        mydb = mysql.connector.connect(host="localhost", user="admin", passwd="123456", database="accounts")
+        mycursor = mydb.cursor()
+        mycursor.execute("SELECT Email,Password FROM accounts.students WHERE Email= '%s'" %email)
+        result = mycursor.fetchone()
+    except :
+        return -1
+
+    if result != None : #check the value in result not null
         if email == result[0] and password == result[1]:
             return 1
-        else:
-            return 0
-    except :
+    else:
         return 0
 
 
 def checklogin2(email,password):
-    mydb = mysql.connector.connect(host="localhost", user="admin", passwd="123456", database="accounts")
-    mycursor = mydb.cursor()
-    mycursor.execute("SELECT Email,Password FROM accounts.admins WHERE Email= '%s'" %email)
-    result = mycursor.fetchone()
     try :
+        mydb = mysql.connector.connect(host="localhost", user="admin", passwd="123456", database="accounts")
+        mycursor = mydb.cursor()
+        mycursor.execute("SELECT Email,Password FROM accounts.admins WHERE Email= '%s'" %email)
+        result = mycursor.fetchone()
+    except :
+        return -1
+
+    if result != None : #check the value in result not null
         if email == result[0] and password == result[1]:
             return 1
-        else:
-            return 0
-    except :
+    else:
         return 0
 
 
